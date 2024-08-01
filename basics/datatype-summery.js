@@ -33,3 +33,34 @@ let myObj = {
 const myFunc = function(){
     console.log("Hello World");
 }
+
+
+/**********************************************/
+//Memory management in JS
+// stack(primitive), heap(Non-Primitive)
+
+let myname = "Amit"
+
+let anotherName = myname
+
+console.log(myname)
+
+anotherName = "Kumar"
+
+console.log(myname)
+console.log(anotherName)
+
+
+let userOne = {
+    email : "amit@gmail.com",
+    pass : "12345",
+}
+
+console.log(userOne)
+
+let userTwo = userOne  //yaha same address to refer krega bcz ye heap area me create hua h
+console.log(userTwo);
+
+userTwo.email = "kumar@yahoo.com"
+console.log(userTwo.email);
+console.log(userOne.email);

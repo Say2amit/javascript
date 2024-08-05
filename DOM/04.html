@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chai aur Code | DOMt</title>
+    <style></style>
+</head>
+<body style=" background-color: #212121; color: #fff;">
+    <ul class="language">
+        <li>Javascript</li>
+    </ul>
+</body>
+<script>
+
+    // Adding 
+    function addLanguage(langName){
+        const li = document.createElement('li');
+        li.innerHTML = `${langName}`
+        document.querySelector('.language').appendChild(li)
+    }
+    addLanguage("python")
+    addLanguage("typescript")
+// here need to traverse entire tree for adding a language
+
+//the optimized approach
+function addOpptiLanguage(langName){
+    const li = document.createElement('li')
+    li.appendChild(document.createTextNode(langName))
+    document.querySelector('.language').appendChild(li)
+}
+addOpptiLanguage("golang")
+// Edit
+const secondLang = document.querySelector("li:nth-child(2)")// phle second lang select kiya("li:nth-hild(2)") jise change krna h
+//secondLang.innerHTML = "Mojo"// but not optimizied
+const newli = document.createElement('li') // new element banaya 
+newli.textContent = "mojo"  
+secondLang.replaceWith(newli)//or text ko replace kiya 
+
+//edit
+const firstLang = document.querySelector("li:first-child")
+firstLang.outerHTML = '<li>TypeScript</li>' // edit using HTML
+
+//remove
+
+const lastLang = document.querySelector("li:last-child")
+lastLang.remove()
+
+</script>
+</html>
